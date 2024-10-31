@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostButton from '../../components/BlogPostButton.astro';
+export async function getStaticPaths() {
+const allPosts = await Astro.glob('../posts/*.md');
+const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+return uniqueTags.map((tag) => {
+  const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+  return {
+    params: { tag },
+    props: { posts: filteredPosts },
+  };
+});
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+---
+<BaseLayout pageTitle={tag}>
+  <div class="flex flex-col gap-5 justify-center items-center">
+    <p class="text-[#ebdbb2] text-xl">Posts tagged with {tag}</p>
+    <div class="flex flex-col flex-wrap justify-center items-center gap-2 py-5">
+        {posts.map((post) => <BlogPostButton url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate}/>)}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,6 @@
+---
+const { title, url, date } = Astro.props;
+const dt = new Date(date).toLocaleDateString('en-IN');
+;
+---
+<a class="bg-[#689d6a] hover:bg-[#d79921] text-white font-bold p-2 rounded-lg shadow-md transition duration-300" href={url}>{title}  -  {dt}</a>
