@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+#tempfolder
+temp-writing/
+
 # dependencies
 node_modules/
 
