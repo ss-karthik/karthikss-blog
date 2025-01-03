@@ -8,7 +8,7 @@ const title = "posts"
 
 <BaseLayout title={title}>
     <div class="flex flex-col flex-wrap justify-center items-center gap-2 py-5">
-        {allPosts.map((post) => <BlogPostButton url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} />)}    
+        {allPosts.map((post) => <BlogPostButton url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} />).reverse()}    
     </div>
 
 </BaseLayout>
