@@ -23,7 +23,7 @@ const MusicPlayer = ({earworm}) => {
 
   return (
     <div className='flex flex-col justify-center items-center gap-3 py-5'>
-        <div className='text-2xl text-[#fb4934]'>{earworm.title}</div>
+        <div className='text-xl text-[#fb4934]'>{earworm.title}</div>
         <div className='text-l text-[#fe8019]'>{earworm.artists}</div>
         <ReactPlayer url={earworm.url} width={0} height={0} playing={playstate} muted={mute} 
             onProgress={handleProgress}
