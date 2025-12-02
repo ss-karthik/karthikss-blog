@@ -10,22 +10,34 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 ---
 
 <BaseLayout title={title}>
-	<div class="flex flex-wrap justify-center md:grid grid-cols-4 md:h-64">
-		<div class="text-[#ebdbb2] bg-[#3c3836] m-2 p-4  rounded-2xl col-span-3">
-			Hey there fellow humans! I am Karthik. I am a CompSci student and I have a great fascination for tech. I also make videos on my YouTube channel. I am a noob (if I say so myself) in the software development space. I also am a great fan of music and would love to make my own music some day. This is my personal space where I talk about all kinds of things that I wish to communicate with the present and future world. So I hope you enjoy reading my thoughts!
+	<div class="flex flex-wrap justify-center lg:grid grid-cols-4 lg:h-64">
+		<div class="flex flex-col col-span-3">
+			<div class="text-[#ebdbb2] bg-[#282828] m-2 p-4  rounded-2xl h-full">
+				Hey there fellow humans! I am Karthik a.k.a. maniak. I am a CompSci student and I have a great fascination for tech. I also make videos on my YouTube channel. I am a noob (if I say so myself) in the software development space. I also am a great fan of music and would love to make my own music some day. This is my personal space where I talk about all kinds of things that I wish to communicate with the present and future world. So I hope you enjoy reading my thoughts!
+			</div>
+			<div class="flex justify-around items-center text-[#ebdbb2] bg-[#282828] m-2 p-4  rounded-2xl">
+				Find me at my: 
+				<a href="https://www.youtube.com/@Maniakss" target="_blank" rel="noopener noreferrer" class="text-[#458588]">Youtube</a>
+				<a href="https://github.com/ss-karthik" target="_blank" rel="noopener noreferrer" class="text-[#458588]">GitHub</a>
+				<a href="mailto:maniac.sskarthik@gmail.com" target="_blank" rel="noopener noreferrer" class="text-[#458588]">Email</a>
+
+				<a href="https://karthikss.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-[#458588]">Portfolio</a>
+			</div>
 		</div>
-		<div class="text-[#ebdbb2] bg-[#3c3836] m-2 p-4 rounded-2xl col-span-1 min-w-48 min-h-48 col-span-1">
+		<div class="text-[#ebdbb2] bg-[#282828] m-2 p-4 rounded-2xl col-span-1 min-w-48 min-h-48 col-span-1">
 			<div>Current Earworm</div>
 			<MusicPlayer earworm={earworm} client:load />
 		</div>
 	</div>
 	
-	<div class="flex justify-around items-center text-[#ebdbb2] bg-[#3c3836] m-2 p-4  rounded-2xl">
-	<h1 class="text-2xl">Tags: </h1>
-	<div class="flex flex-wrap justify-center items-center gap-5 py-5">
-		{tags.map((tag) => (
-			<TagButton url={tag} title={tag}/>
-		))}
+	<div class="flex justify-around items-center text-[#ebdbb2] bg-[#282828] m-2 p-4  rounded-2xl">
+		<h1 class="text-2xl">Tags: </h1>
+		<div class="flex flex-wrap justify-center items-center gap-5 py-5">
+			{tags.map((tag) => (
+				<TagButton url={tag} title={tag}/>
+			))}
+		</div>
 	</div>
-	</div>
+
+	
 </BaseLayout>

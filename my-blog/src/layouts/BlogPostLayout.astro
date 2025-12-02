@@ -4,7 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 ---
 <BaseLayout title={frontmatter.title}>
 <div class="flex flex-col items-center">
-<div class="text-[#ebdbb2] bg-[#3c3836] m-2 p-4 rounded-2xl flex flex-col gap-3">
+<div class="text-[#ebdbb2] bg-[#282828] m-2 p-4 max-w-4xl rounded-2xl flex flex-col gap-3">
 <h1 class="text-3xl"><strong>{frontmatter.title}</strong></h1>
 <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
 <p><em>{frontmatter.description}</em></p>
