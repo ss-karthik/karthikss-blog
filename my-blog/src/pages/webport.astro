@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = "webport"
+import Button from '../components/Button.astro';
+---
+
+<BaseLayout title={title}>
+	<div class="flex flex-col items-center justify-center gap-5">
+		<div class="flex flex-col justify-center items-center gap-5 text-[#ebdbb2] bg-[#282828] m-2 p-4  rounded-2xl h-full max-w-4xl">
+				<h1 class="text-2xl">Webport</h1>	
+	
+                <p>
+                    Ahoy! Welcome to my webport. Following the time honoured tradition of the web, I have curated here a list of websites that I enjoy visiting. Some of them are friends. Some are people I came across on the internet completely randomly. Some are people I found in similar link/webring sections on other websites. Treat this as your disembarking point away from my website and into a non-algorithmic web surfing session with interesting things and people. 
+                </p>
+                <img src="https://ugokawaii.com/wp-content/uploads/2023/06/ship.gif" width="200"></img>
+                <div class="flex flex-wrap gap-5">
+                <Button url={"https://pinklonelyslonelycorner.neocities.org/"} title={'Pinklonely'}/>
+                <Button url={"https://tokisuno.rocks/"} title={'Tokisuno'}/>
+                </div>
+        </div>
+		
+        
+    </div>
+
+	
+</BaseLayout>

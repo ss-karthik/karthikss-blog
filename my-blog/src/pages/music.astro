@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = "music"
+import Button from '../components/Button.astro';
+import MusicPlayer from '../components/MusicPlayer.jsx';
+import music from '../music.json'
+const selected = music.earworms[0];
+---
+
+<BaseLayout title={title}>
+	<div class="flex flex-col items-center justify-center gap-5">
+		<div class="flex flex-col justify-center items-center gap-5 text-[#ebdbb2] bg-[#282828] m-2 p-4  rounded-2xl h-full max-w-4xl">
+			<h1 class="text-2xl">Music</h1>	
+            <p>
+                A collection of past earworms on the website, and other random music I like to listen to. Click and listen!
+            </p>
+                {music.earworms.map((e)=>{
+                    return (
+                        <Button url={e.url} title={e.title + " - " + e.artists}/>
+                    )
+                })}
+                
+
+        </div>
+		
+        
+    </div>
+
+	
+</BaseLayout>
